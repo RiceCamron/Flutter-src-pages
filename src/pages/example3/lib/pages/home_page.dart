@@ -16,41 +16,41 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: size.width,
       height: size.height,
-      child: Stack(
-        children: <Widget>[
-          Container(
+      child: Container(
+        width: size.width,
+        height: size.height,
+        decoration: BoxDecoration(
+          color: black,
+        ),
+        child: SafeArea(
+          child: Container(
             width: size.width,
-            height: size.height,
-            decoration: BoxDecoration(
-              color: black,
-            ),
-            child: SafeArea(
-              child: Container(
-                width: size.width,
-                height: size.height,
-                color: black,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 25,
-                    right: 20,
-                    left: 15,
-                    bottom: 10,
-                  ),
-                  child: Column(
-                    children: [
-                      HeaderHomePage(),
-                      Flexible(
-                        child: Row(
-                          children: <Widget>[
-                            LeftPanel(size: size),
-                            Expanded(
-                              child: Container(
-                                height: size.height,
-                                child: Column(
-                                  children: <Widget>[
-                                    Container(
-                                      height: size.height * 0.3,
-                                    ),
+            height: 26,
+            color: black,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 25,
+                right: 20,
+                left: 15,
+                bottom: 10,
+              ),
+              child: Column(
+                children: [
+                  HeaderHomePage(),
+                  Flexible(
+                    child: Row(
+                      children: <Widget>[
+                        LeftPanel(size: size),
+                        Expanded(
+                          child: Container(
+                            height: size.height,
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  height: size.height * 0.4,
+                                ),
+                                Stack(
+                                  children: [
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
@@ -58,86 +58,88 @@ class _HomePageState extends State<HomePage> {
                                         children: [
                                           Column(
                                             children: [
-                                              Container(
-                                                height: size.height * 0.4,
-                                                decoration: BoxDecoration(
-                                                    color: primary),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: <Widget>[
-                                                    getProfile(),
-                                                    getImageIcon(
-                                                        JurtaIcons.callIcon,
-                                                        35.0,
-                                                        white,
-                                                        "",
-                                                        0.0),
-                                                    getImageIcon(
-                                                        JurtaIcons.heartIcon,
-                                                        35.0,
-                                                        white,
-                                                        "46",
-                                                        12.0),
-                                                    getImageIcon(
-                                                        JurtaIcons.messageIcon,
-                                                        35.0,
-                                                        white,
-                                                        "",
-                                                        0.0),
-                                                    Stack(
-                                                      children: <Widget>[
-                                                        Positioned(
-                                                          left: 8,
-                                                          bottom: 11,
-                                                          child: getImageIcon(
-                                                              JurtaIcons
-                                                                  .shareIcon,
-                                                              25.0,
-                                                              white,
-                                                              "",
-                                                              0.0),
-                                                        ),
-                                                        getImageIcon(
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: <Widget>[
+                                                  getProfile(),
+                                                  SizedBox(height: 10),
+                                                  getImageIcon(
+                                                      JurtaIcons.callIcon,
+                                                      35.0,
+                                                      white,
+                                                      "",
+                                                      0.0),
+                                                  SizedBox(height: 10),
+                                                  getImageIcon(
+                                                      JurtaIcons.heartIcon,
+                                                      35.0,
+                                                      white,
+                                                      "46",
+                                                      12.0),
+                                                  SizedBox(height: 10),
+                                                  getImageIcon(
+                                                      JurtaIcons
+                                                          .messageIcon,
+                                                      35.0,
+                                                      white,
+                                                      "",
+                                                      0.0),
+                                                  SizedBox(height: 10),
+                                                  Stack(
+                                                    children: <Widget>[
+                                                      Positioned(
+                                                        left: 8,
+                                                        bottom: 11,
+                                                        child: getImageIcon(
                                                             JurtaIcons
-                                                                .shareBgIcon,
-                                                            35.0,
+                                                                .shareIcon,
+                                                            25.0,
                                                             white,
                                                             "",
                                                             0.0),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
+                                                      ),
+                                                      getImageIcon(
+                                                          JurtaIcons
+                                                              .shareBgIcon,
+                                                          35.0,
+                                                          white,
+                                                          "",
+                                                          0.0),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                      height: 80,
+                                      width: 200,
+                                      child: ElevatedButton(
+                                        onPressed: () {},
+                                        child: Text("Подробнее"),
+                                        style: ElevatedButton.styleFrom(
+                                            primary: btnColor),
+                                      ),
+                                    ),
+                                                ],
                                               ),
                                             ],
-                                          ),
-                                          Container(
-                                            child: ElevatedButton(
-                                              onPressed: () {},
-                                              child: Text("Подробнее"),
-                                              style: ElevatedButton.styleFrom(
-                                                  primary: btnColor),
-                                            ),
                                           ),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-                              ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }
@@ -205,7 +207,7 @@ class LeftPanel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Text(
-            items[0]['price'],
+            items[0]['name'],
             style: TextStyle(
               fontFamily: 'HelveticaNeueCyr',
               fontWeight: FontWeight.bold,
@@ -216,7 +218,7 @@ class LeftPanel extends StatelessWidget {
             height: 10,
           ),
           Text(
-            items[0]['description'],
+            items[0]['caption'],
             style: TextStyle(
               fontFamily: 'HelveticaNeueCyr',
               color: white,
@@ -228,12 +230,15 @@ class LeftPanel extends StatelessWidget {
             height: 10,
           ),
           Text(
-            items[0]['address'],
+            items[0]['songName'],
             style: TextStyle(
               fontFamily: 'HelveticaNeueCyr',
               color: white,
               fontSize: 12,
             ),
+          ),
+          SizedBox(
+            height: 30,
           ),
         ],
       ),
