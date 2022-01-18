@@ -49,7 +49,6 @@ class _PhotoItemState extends State<PhotoItem> {
             ),
             child: Column(
               children: [
-                HeaderHomePage(),
                 Flexible(
                   child: Row(
                     children: <Widget>[

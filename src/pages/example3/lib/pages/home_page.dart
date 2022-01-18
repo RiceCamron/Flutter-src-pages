@@ -33,14 +33,7 @@ class _HomePageState extends State<HomePage> {
               );
             }),
           ),
-          Positioned(
-            top: 80,
-            child: Image.asset(
-              "assets/images/jurta_icon.png",
-              height: 20,
-              width: 60,
-            ),
-          ),
+          HeaderHomePage(),
         ],
       ),
     );
@@ -194,6 +187,19 @@ class LeftPanel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
+          Container(
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text("Записаться на показ", style: TextStyle(fontFamily: "HelveticaNeueCyr", fontSize: 12, fontWeight: FontWeight.bold),),
+              style: ElevatedButton.styleFrom(
+                primary: black.withOpacity(0.4),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                minimumSize: Size(100, 30),
+              ),
+            ),
+          ),
           Text(
             price,
             style: TextStyle(
@@ -241,22 +247,49 @@ class HeaderHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
       children: [
-        Container(
-          child: Stack(
-            children: [
-              Text(
-                "Фильтр",
-                style: TextStyle(
-                  color: white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+        SizedBox(height: 80),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Positioned(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(19, 30, 52, 1),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(8.0),
+                      bottomRight: Radius.circular(8.0)),
+                ),
+                child: Image.asset(
+                  "assets/images/jurta_icon.png",
+                  height: 20,
+                  width: 60,
                 ),
               ),
-            ],
-          ),
+            ),
+            Positioned(
+              left: 100,
+              child: Container(
+                child: Row(
+                  children: [
+                    Text(
+                      "Фильтр",
+                      style: TextStyle(
+                        color: white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Icon(
+                      Icons.filter_alt_outlined,
+                      color: white,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );

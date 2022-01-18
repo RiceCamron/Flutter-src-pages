@@ -114,8 +114,7 @@ class _RootAppState extends State<RootApp> {
                         Text(
                           bottomItems[index]['label'],
                           style: TextStyle(
-                            
-              fontFamily: 'HelveticaNeueCyr',
+                            fontFamily: 'HelveticaNeueCyr',
                             color: darkBlue,
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
