@@ -1,3 +1,4 @@
+import 'package:example3/pages/show_apartment_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:example3/pages/home_page.dart';
@@ -36,16 +37,7 @@ class _RootAppState extends State<RootApp> {
             ),
           ),
         ),
-        Center(
-          child: Text(
-            'Upload',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: black,
-            ),
-          ),
-        ),
+        ShowApartment(),
         Center(
           child: Text(
             'Избранное',

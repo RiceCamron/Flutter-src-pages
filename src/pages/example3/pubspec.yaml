@@ -30,6 +30,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+    # dio: ^4.0.0
+    # flutter_polyline_points: ^0.2.6
+    # google_maps_flutter: ^2.0.2
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -67,6 +71,11 @@ flutter:
     - assets/images/icons/share_bg.png
     - assets/images/icons/down_arrow.png
     - assets/images/icons/up_arrow.png
+    - assets/images/icons/clock.png
+    - assets/images/icons/locator_icon.png
+    - assets/images/icons/screw.png
+    - assets/images/icons/rating_star_icon.png
+    - assets/images/icons/rating_bg_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
